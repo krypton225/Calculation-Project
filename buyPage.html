@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>عملية شراء</title>
+
+    <link rel="icon" href="images/myNewLetter.png" />
+
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/fontawesome.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-toggle.min.css" />
+    <link rel="stylesheet" href="css/fundmentals.css" />
+    <link rel="stylesheet" href="css/jqeury-confirm.css" />
+    <link rel="stylesheet" href="css/alertify.min.css" />
+    <link rel="stylesheet" href="css/default.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="css/profileStyle.css" />
+    <link rel="stylesheet" type="text/css" href="css/salePage.css" />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <!--[if lt IE 9]>
+          <script src="js/html5shiv.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+
+    <!-- Start Main nav bar of the app -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="./images/logo-removebg-preview.png" width="100" height="50" />
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+            aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto" style="text-align: center; font-size: 14.5px;">
+                <li class="nav-item">
+                    <a class="nav-link" title="الصفحة الرئيسية" href="./main.html">الصفحة الرئيسية
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" title="الصفحة الشخصية" href="profilePage.html">تعديل بياناتك</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="modal" data-target="#customerModal" title="إضافة عميل جديد"
+                        href="#">إضافة
+                        عميل جديد</a>
+                </li>
+
+                <li class="nav-item" style="cursor: pointer;">
+                    <a class="nav-link" data-toggle="modal" data-target="#removeCustomerModal" title="حذف عميل">حذف
+                        عميل</a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" data-toggle="modal" data-target="#checkOperationsModal" title="تصفُّح العميات"
+                        href="#">تصفُّح العميات</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link " title="الأرصدة الحالية" href="current-balance.html">الأرصدة الحالية</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" title="الأرباح" href="profits.html">الأرباح</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="modal" data-target="#inventoryWorkModal" title="عمل جرد"
+                        href="#">عمل جرد</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" id="btn-confirm" title="تسجيل الخُروج" href="#">تسجيل الخُروج</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- End Main nav bar of the app -->
+
+    <!-- MODAL OF remove a customer -->
+    <div class="modal fade" id="removeCustomerModal" tabindex="-1" role="dialog" aria-labelledby="removeCustomerModal"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-top">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h5 class="modal-title w-100" id="removeCustomerModal">
+                        حذفُ عميل
+                    </h5>
+                </div>
+
+                <div class="modal-body">
+                    <br role="form" action="" method="post" class="login-form">
+                    <select name="names" class="form-control my-selection">
+                        <option value="London">سماء محمد</option>
+                        <option value="Paris">محمد عبد الحكيم</option>
+                        <option value="Madrid">حامد السعيد</option>
+                        <option value="Madrid">خالد محمد</option>
+                        <option value="Madrid">فارس ابراهيم</option>
+                        <option value="Madrid">فايز عبد الله</option>
+                        <option value="Madrid">جمال السيد</option>
+                    </select> <br></br>
+                    <input type="submit" id="deletingCustomer" class="btn" title="حذفُ العميل" value="Delete customer" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL OF add new customer -->
+    <div class="modal fade" id="customerModal" tabindex="-1" role="dialog" aria-labelledby="customerModal"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-top">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h5 class="modal-title w-100" id="customerModal">
+                        إضافة عميل جديد
+                    </h5>
+                </div>
+
+                <div class="modal-body">
+                    <form role="form" action="" method="post" class="login-form">
+                        <div class="form-group">
+                            <label class="sr-only" for="FullName">FullName</label>
+                            <input type="text" autocomplete="off" name="FullName" placeholder="Full Name"
+                                class="FullName form-control" id="FullName" title="إسم العميل الجديد" required />
+                        </div>
+
+                        <div class="form-group">
+                            <input type="radio" tabindex="1" class="option-input radio" name="gender" title="رَجُلٌ"
+                                required />
+                            <label>Male</label>
+                            <input type="radio" tabindex="1" class="option-input radio" name="gender" title="إمرأةٌ"
+                                required />
+                            <label>Female</label>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="sr-only" for="first-mob">first-mob</label>
+                            <input type="text" autocomplete="off" name="first-mob"
+                                placeholder="First Mobile Number (required)" class="first-mob form-control"
+                                id="first-mob" title="رقم المُوبايل الأوَّل" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="sr-only" for="second-mob">second-mob</label>
+                            <input type="text" autocomplete="off" name="second-mob"
+                                placeholder="Second Mobile Number (if existed)" class="second-mob form-control"
+                                id="second-mob" title="رقم المُوبايل الثاني إنْ وُجِدَ " />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="sr-only" for="third-mob">third-mob</label>
+                            <input type="text" autocomplete="off" name="third-mob"
+                                placeholder="Third Mobile Number (if existed)" class="third-mob form-control"
+                                id="third-mob" title="رقم المُوبايل الثالث إنْ وُجِدَ " />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="sr-only" for="first-tel">first-tel</label>
+                            <input type="text" autocomplete="off" name="first-tel"
+                                placeholder="First Telephone Number (if existed)" class="first-tel form-control"
+                                id="first-tel" title="رقم الهاتف الأرضي إنْ وُجِدَ" />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="sr-only" for="second-tel">second-tel</label>
+                            <input type="text" autocomplete="off" name="second-tel"
+                                placeholder="Second Telephone Number (if existed)" class="second-tel form-control"
+                                id="second-tel" title="رقمُ الهاتف الأرضي إنْ وُجِدَ" />
+                        </div>
+
+                        <input type="submit" id="addingCustomer" class="btn" title="إضافةُ العميل"
+                            value="Add customer" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL OF Inventory work -->
+    <div class="modal fade" id="inventoryWorkModal" tabindex="-1" role="dialog" aria-labelledby="inventoryWorkModal"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-top">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h5 class="modal-title w-100" id="inventoryWorkModal">عمل جرد</h5>
+                </div>
+
+                <div class="modal-body">
+                    <form role="form" action="" method="post" class="login-form">
+                        <div class="form-group d-flex align-items-center justify-content-center">
+                            <label for="start">From:</label>
+                            <input type="date" id="start-date" name="start" /><br />
+
+                            <label for="end">To:</label>
+                            <input type="date" id="end-date" name="end" />
+                        </div>
+                        <button type="submit" class="btn" title="عمل جرد الآن">
+                            Go Now!
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL OF check Operation -->
+    <div class="modal fade" id="checkOperationsModal" tabindex="-1" role="dialog" aria-labelledby="checkOperationsModal"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-top">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h5 class="modal-title w-100" id="checkOperationsModal">
+                        تصفُّح العلميات
+                    </h5>
+                </div>
+                <div class="modal-body">
+                    <a href="buyPage.html" type="submit" class="btn" title="عمليات الشراء">Buy
+                        Operations</a><br /><br />
+                    <a href="salePage.html" type="submit" class="btn" title="عمليات البيع">Sale Operations</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- This is confirming modal for the logout -->
+    <!-- <button class="btn btn-default" id="btn-confirm">Confirm</button> -->
+
+    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"
+        id="mi-modal">
+        <div class="modal-dialog modal-sm modal-dialog-top">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100" id="btn-confirm">
+                        هل تُريد تسجيل الخُروج؟
+                    </h4>
+                </div>
+                <div class="modal-footer new-footer">
+                    <button type="button" class="btn btn-primary" id="modal-btn-no" title="لا">
+                        لا
+                    </button>
+                    <button type="button" class="btn btn-default" id="modal-btn-si" title="نعم">
+                        نعم
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="alert" role="alert" id="result"></div>
+
+    <!-- ==================================================================================================== -->
+    <!-- This is for the data to input as buy operation -->
+    <div class="container">
+        <div class="row gutters d-flex align-items-center justify-content-center">
+            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                <div class="card h-80">
+                    <div class="card-body">
+                        <form>
+                            <div class="row gutters">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h6 class="mb-3 text-primary d-flex align-items-center justify-content-center">
+                                        عملية شراء
+                                    </h6>
+                                </div>
+
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <input type="number" autocomplete="off" class="form-control text-center"
+                                            id="myValueRecharge" placeholder="Value recharge"
+                                            title="قيمة الشحن الذي تُريد" min="1" required />
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <select name="names" class="form-control">
+                                            <option value="London">تحويل ڤوداڤون</option>
+                                            <option value="Paris">تحويل أُورانچ</option>
+                                            <option value="Madrid">تحويل إتصالات</option>
+                                            <option value="Madrid">تحويل شركة وي</option>
+                                            <option value="Madrid">1 تحويل الماكينة</option>
+                                            <option value="Madrid">2 تحويل الماكينة</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row gutters">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="text-right">
+                                        <button type="button" id="submit" name="submit" class="btn btn-primary">
+                                            <a class="btn btn-primary" href="#">نفِّذْ العملية الآن</a></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================================================================================================== -->
+
+    <script src="js/jquery-3.4.1.min.js "></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-toggle.min.js"></script>
+    <script src="js/jquery.backstretch.min.js"></script>
+    <script src="js/jquery-confirm.js"></script>
+    <script src="js/alertify.min.js"></script>
+    <script src="js/script-profile.js"></script>
+
+</body>
+
+</html>

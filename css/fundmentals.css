@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    --scrollbarBG: #30475e;
+    --thumbBG: #30475e;
+}
+
+body::-webkit-scrollbar {
+    width: 11px;
+}
+
+body {
+    scrollbar-width: thin;
+    scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--scrollbarBG);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--thumbBG);
+    border-radius: 6px;
+    border: 3px solid var(--scrollbarBG);
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(53, 82, 66, 0.5), rgb(47, 80, 63, 0.6)), url(../images/bg.jpg) center no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+}
+
+
+/* almarai-300 - arabic */
+
+@font-face {
+    font-family: 'Almarai';
+    font-style: normal;
+    font-weight: 300;
+}
+
+
+/* almarai-regular - arabic */
+
+@font-face {
+    font-family: 'Almarai';
+    font-style: normal;
+    font-weight: 400;
+}
+
+h6{
+    font-family: 'Almarai';
+}
+
+/* arabic */
+
+@font-face {
+    font-family: 'Almarai';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/almarai/v5/tsstApxBaigK_hnnQ1iFow.woff2) format('woff2');
+    unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC, U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+/* For the nav bar */
+
+.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+.nav-item .nav-link {
+    font-family: 'Almarai';
+}
+
+@media (min-width: 455px) and (max-width:575px) {}
+
+@media (min-width: 576px) {}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {}
+
+
+/* For the modal */
+
+.modal-dialog {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    bottom: 0;
+    left: 0;
+    z-index: 10040;
+    overflow: auto;
+    overflow-y: auto;
+}
+
+.modal-content {
+    background: #30475e;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    border: 0;
+    text-align: left;
+}
+
+.modal-header {
+    padding: 25px 25px 15px 20px;
+    background: #30475e;
+    border: 0;
+    -moz-border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
+    color: #888;
+}
+
+.modal-header .close {
+    font-size: 20px;
+    color: #eee;
+    font-weight: 300;
+    text-shadow: none;
+    outline: none;
+    opacity: 1;
+}
+
+.modal-title {
+    margin-bottom: 10px;
+    line-height: 30px;
+    font-family: 'Almarai';
+    font-size: 20px;
+    color: #eee;
+}
+
+.modal-body {
+    padding: 25px 25px 30px 20px;
+    background: #30475e;
+    text-align: left;
+    -moz-border-radius: 0 0 4px 4px;
+    -webkit-border-radius: 0 0 4px 4px;
+    border-radius: 0 0 4px 4px;
+}
+
+.modal-body form .input-error {
+    border-color: #399599;
+}
+
+
+/* Retina-ize images/icons */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and ( min--moz-device-pixel-ratio: 2),
+only screen and ( -o-min-device-pixel-ratio: 2/1),
+only screen and ( min-device-pixel-ratio: 2),
+only screen and ( min-resolution: 192dpi),
+only screen and ( min-resolution: 2dppx) {}
+
+.form-group input,
+.form-group input:focus {
+    background: #00587a;
+    color: #399599;
+    outline: none;
+    border-radius: 10px;
+}
+
+.btn {
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    padding: 0 20px;
+    vertical-align: middle;
+    background: #00587a;
+    border: 0;
+    font-family: 'Almarai';
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 50px;
+    color: #fff;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    text-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -o-transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
+    -ms-transition: all .3s;
+    transition: all .3s;
+}
+
+.btn:hover {
+    opacity: 0.6;
+    color: #fff;
+}
+
+.btn:active {
+    outline: 0;
+    opacity: 0.6;
+    color: #00587a;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.btn:focus {
+    outline: 0;
+    opacity: 0.6;
+    background: #00587a;
+    color: #fff;
+}
+
+.btn:active:focus,
+.btn.active:focus {
+    outline: 0;
+    opacity: 0.6;
+    background: #00587a;
+    color: #fff;
+}

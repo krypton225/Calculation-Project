@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>تطبيق الحسابات</title>
+    <link rel="icon" href="images/myNewLetter.png">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lateef&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/fontawesome.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-toggle.min.css" />
+    <link rel="stylesheet" href="css/fundmentals.css" />
+    <link rel="stylesheet" href="css/form-elements.css">
+    <link rel="stylesheet" href="css/jqeury-confirm.css" />
+    <link rel="stylesheet" href="css/styleIndex.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="container">
+        <div class="banner">
+            <h1>Hello In App, <span>Man!</span></h1>
+            <p>This is services for calculating many things!</p>
+            <button type="button" title="تسجيلُ الدُخول " class="btn-left" data-toggle="modal" data-target="#logInModal">تسجيلُ الدُخول</button>
+            <button type="button" title="التسجيلُ كمُستخدم جديد" class="btn-right" data-toggle="modal" data-target="#registerModal">التسجيلُ الآن</button>
+        </div>
+    </div>
+
+    <!-- MODAL OF LOGIN-->
+    <div class="modal fade" id="logInModal" tabindex="-1" role="dialog" aria-labelledby="logInModal" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-top">
+        <div class="modal-content">
+
+          <div class="modal-header text-center">
+            <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span> -->
+            </button>
+            <h5 class="modal-title w-100" id="logInModal">Log In</h5>
+          </div>
+
+          <div class="modal-body">
+
+                  <form role="form" action="" method="post" class="login-form">
+                    <div class="form-group">
+                      <label class="sr-only" for="form-username">Username</label>
+                        <input type="text" autocomplete="off" name="form-username" placeholder="@Username" class="form-username form-control" id="form-username" title="اسمُ المُستخدم">
+                      </div>
+                      <div class="form-group">
+                        <label class="sr-only" for="form-password">Password</label>
+                        <input type="password" name="form-password" placeholder="Password" class="form-password form-control" id="form-password" title="كلمةُ المُرور">
+                      </div>
+                      <button type="submit" class="btn" title="سجِّل الدُخول">Sign in!</button>
+                  </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================================================================================================== -->
+
+    <!-- MODAL OF REGISTER -->
+    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModal" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-top">
+        <div class="modal-content">
+
+          <div class="modal-header text-center">
+            <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span> -->
+            </button>
+            <h5 class="modal-title w-100" id="registerModal">Register</h5>
+          </div>
+
+          <div class="modal-body">
+
+                  <form role="form" action="" method="post" class="login-form"
+                    oninput='up2.setCustomValidity(form-password.value != form-confirm-password.value ? "Passwords do not match!" : "")'>
+                    <div class="form-group">
+                      <label class="sr-only" for="form-first-name">First name</label>
+                        <input type="text" autocomplete="off" name="form-first-name" placeholder="Full name" class="form-first-name form-control" id="form-first-name" title="الإسمُ الأوَّلُ">
+                    </div>
+                      <div class="form-group">
+                        <label class="sr-only" for="form-second-name">Second name</label>
+                          <input type="text" autocomplete="off" name="form-second-name" placeholder="Second name" class="form-second-name form-control" id="form-second-name" title="الإسمُ الثاني">
+                      </div>
+                      <div class="form-group">
+                          <label class="sr-only" for="form-username">Username</label>
+                          <input type="text" autocomplete="off" name="form-username" placeholder="@Username" class="form-username form-control" id="form-username" title="اسمُ المُستخدم">
+                        </div>
+                      <div class="form-group">
+                        <label class="sr-only" for="form-password">Password</label>
+                        <input type="password" name="form-password" placeholder="Password" class="form-password form-control" id="form-password" title="كلمةُ المُرور">
+                      </div>
+                      <div class="form-group">
+                        <label class="sr-only" for="form-confirm-password">Confirm password</label>
+                        <input type="password" name="form-confirm-password" placeholder="Confirm password" class="form-confirm-password form-control" id="form-confirm-password" title="تأكيدُ كلمة المُرور">
+                      </div>
+                      <button type="submit" class="btn" title="التسجيل الآن">Register</button>
+                  </form>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; khaled.mohamed22598@gmail.com</p>
+    </div>
+
+    <script src="js/jquery-3.4.1.min.js "></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-toggle.min.js"></script>
+    <script src="js/jquery.backstretch.min.js"></script>
+    <script src="js/jquery-confirm.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
