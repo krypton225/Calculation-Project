@@ -1,4 +1,4 @@
-# Calculation-Project
+# Calculation Project
 
 ![1](https://user-images.githubusercontent.com/73050798/160428883-e56e942b-5367-499a-ad26-d515e89daba2.PNG)
 
